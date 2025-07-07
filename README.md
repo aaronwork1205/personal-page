@@ -30,7 +30,7 @@ I'm actively looking for full-time software engineering roles, especially in bac
 
 ### 📫 How to Reach Me
 
-- ✉️ Email: [wenhao.wwang@gmail.com](mailto:wenhao.wwang@gmail.com)
+- ✉️ Email: [aaron.wang888@hotmail.com](mailto:aaron.wang888@hotmail.com)
 - 💼 LinkedIn: [linkedin.com/in/wenhao-wang-aaron](https://www.linkedin.com/in/wenhao-wang-aaron)
 - 🌐 Personal Site: (Coming soon)
 
