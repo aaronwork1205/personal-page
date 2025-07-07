@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="asset/me.png" alt="Aaron Wang" width="180" style="border-radius:16px;">
+</p>
+
 # 👋 Hi, I'm Aaron (Wenhao) Wang
 
 🎓 Master's in Computer Science @ Georgia Tech  
@@ -12,11 +16,11 @@ I'm actively looking for full-time software engineering roles, especially in bac
 
 ### 🛠️ Tech Stack
 
-- **Languages:** Python · Go · C++ · JavaScript (TypeScript) · SQL
-- **Frameworks:** Flask · FastAPI · React · Node.js · Express
+- **Languages:** Python · Go · C/C++ · JavaScript (TypeScript) · SQL
+- **Frameworks:** Flask · FastAPI · React · Node.js · Express · Spring Boot
 - **ML Tools:** PyTorch · ONNX · Transformers · NumPy · OpenCV
-- **Infra:** Docker · Kubernetes · GitHub Actions · Redis · PostgreSQL
-- **Other:** ROS2 · LabVIEW · Habitat-Sim · D3.js · Superset
+- **Infra:** Docker · Kubernetes · GitHub Actions · Redis · PostgreSQL · AWS · Terraform · Jenkins
+- **Other:** ROS2 · LabVIEW · Habitat-Sim · D3.js · Superset · Figma
 
 ---
 
@@ -25,6 +29,8 @@ I'm actively looking for full-time software engineering roles, especially in bac
 - 🧠 **GPT Web App**: Built a GPT-style chatbot using ONNX inference, Go backend, TypeScript frontend, Docker, and Kubernetes deployment.
 - 🎮 **Human-Robot Voice Interaction**: Middleware for voice-command navigation in Habitat-Sim with semantic parsing and agent control.
 - 📊 **PERM Case Visualization**: Built a USCIS PERM case tracker that aggregates and visualizes PERM approvals/denials by company and year.
+- 🗺️ **Open Tour Guide**: Group trip planning platform with React Native, Firebase, GPT-4 API, and Figma-based UI/UX.
+- ✅ **Task Manager Mobile App**: React Native + Express.js + MongoDB for collaborative task management and event scheduling.
 
 ---
 
@@ -32,7 +38,7 @@ I'm actively looking for full-time software engineering roles, especially in bac
 
 - ✉️ Email: [aaron.wang888@hotmail.com](mailto:aaron.wang888@hotmail.com)
 - 💼 LinkedIn: [linkedin.com/in/wenhao-wang-aaron](https://www.linkedin.com/in/wenhao-wang-aaron)
-- 🌐 Personal Site: (Coming soon)
+- 🌐 [Personal Site](https://github.com/aaronwork1205/personal-page)
 
 ---
 
