@@ -7,7 +7,7 @@ async function sendLog() {
   };
 
   try {
-    const response = await fetch('http://155.138.200.63:8090/log', {
+    const response = await fetch('https://api.aaronw.link/log', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
