@@ -12,6 +12,22 @@
     <link rel="icon" href="asset/fav.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        
+            @keyframes border-shine {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+            }
+            a.relative::before {
+            content: "";
+            background-size: 200% 200%;
+            animation: border-shine 3s linear infinite;
+            }
+           
+
         .timeline-item:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -36,9 +52,9 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
-</head>
-<body class="bg-gray-50 font-sans antialiased text-gray-800">
-    <!-- Header -->
+    </head>
+    <body class="bg-gray-50 font-sans antialiased text-gray-800">
+        <!-- Header -->
     <header class="bg-white shadow-sm">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between">
@@ -58,10 +74,25 @@
                     <a href="https://drive.google.com/file/d/1w8AuHHavLNDBwWJqz5x4HgOvjvEfTpus/view?usp=sharing" class="px-6 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-center">
                         Preview CV
                     </a>
+                    <a href="https://gpt.aaronw.link" target="_blank"
+                    class="relative z-0 px-6 py-2 text-blue-600 rounded-md bg-white text-center font-medium
+                            transition duration-300 overflow-hidden border border-transparent
+                            before:absolute before:inset-0 before:rounded-md
+                            before:bg-gradient-to-r before:from-pink-500 before:via-yellow-400 before:to-blue-500
+                            before:z-[-1] before:animate-border-shine before:opacity-100
+                            after:absolute after:inset-[1px] after:rounded-md after:bg-white after:z-[-1]
+                            hover:bg-blue-50 transition duration-300">
+                    Ask Aaron'GPT
+                    </a>
+
+
+
+
                 </div>
             </div>
         </div>
     </header>
+
 
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
@@ -143,6 +174,40 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Key Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
+    <div class="h-48 bg-gray-200 flex items-center justify-center">
+        <i class="fas fa-user-circle text-indigo-400 text-5xl"></i>
+    </div>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Personal Portfolio Website</h3>
+                <p class="text-gray-600 mb-4">
+                    Built a personal website using <b>React</b> as the frontend framework, deployed on <b>GitHub Pages</b>. 
+                    The backend was implemented in <b>Go</b>, responsible for tracking visitor analytics and performing website security checks.
+                    Integrated a <b>RAG-based AI assistant</b> powered by <b>ChatGPT API</b>, which answers HR-related questions about my resume.
+                    The project demonstrates full-stack capabilities including AI integration, traffic analysis, and secure deployment.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Go</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">GitHub Pages</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">ChatGPT API</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">RAG</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">May 2025 – Present</span>
+                    <a href="https://github.com/aaronwork1205/personal-page" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">GitHub Repo 
+                        <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
                 <!-- HealthAI Advisor -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
                     <div class="h-48 bg-gray-200 flex items-center justify-center">
@@ -166,35 +231,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Open Tour Guide -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-map-marked-alt text-green-400 text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Open Tour Guide</h3>
-                        <p class="text-gray-600 mb-4">
-        Developed and designed a group trip planning social media platform using 
-        <b>React Native</b> as frontend with account management, maps, collaboration tools, event handling, and access control. 
-        Deployed <b>Firebase</b> backend for real-time database with synchronization, storing user input and account information. 
-        Integrated <b>GPT-4 API</b> providing personalized travel suggestions for attractions, hotels, and restaurants based on user’s location.
-        UI/UX designed with <b>Figma</b>.
-    </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React Native</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Firebase</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Figma</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">GPT-4 API</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">Sep 2023 – Dec 2023</span>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">GitHub Repo 
-                            <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
-                                </a>
-                            
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Task Manager Mobile App -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
                     <div class="h-48 bg-gray-200 flex items-center justify-center">
