@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Aaron Wang</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="logssender.js" defer></script>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3b820d5359814474926d44d57d843bf8"}'></script>
+    <script src="i18n.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="icon" href="asset/fav.png" type="image/png" sizes="32x32">
@@ -53,7 +52,7 @@
         }
     </style>
     </head>
-    <body class="bg-gray-50 font-sans antialiased text-gray-800">
+    <body data-page="home" class="bg-gray-50 font-sans antialiased text-gray-800">
     
     <header class="bg-white shadow-sm">
         <div class="container mx-auto px-6 py-8">
@@ -64,27 +63,34 @@
                     </div>
                     <div>
                         <h1 class="text-2xl font-bold text-gray-800">Aaron Wang</h1>
-                        <p class="text-blue-600">Software Development Engineer</p>
+                        <p class="text-blue-600" data-i18n="header.role">Software Development Engineer</p>
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-center">
-                        Contact Me
-                    </a>
-                    <a href="https://drive.google.com/file/d/1w8AuHHavLNDBwWJqz5x4HgOvjvEfTpus/view?usp=sharing" class="px-6 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-center">
-                        Preview CV
-                    </a>
-                    <a href="https://gpt.aaronw.link/index.html" target="_blank"
-                    class="relative z-0 px-6 py-2 text-blue-600 rounded-md bg-white text-center font-medium
-                            transition duration-300 overflow-hidden border border-transparent
-                            before:absolute before:inset-0 before:rounded-md
-                            before:bg-gradient-to-r before:from-pink-500 before:via-yellow-400 before:to-blue-500
-                            before:z-[-1] before:animate-border-shine before:opacity-100
-                            after:absolute after:inset-[1px] after:rounded-md after:bg-white after:z-[-1]
-                            hover:bg-blue-50 transition duration-300">
-                    Ask Aaron's GPT
-                    </a>
-
+                <div class="flex flex-col gap-3 sm:items-end">
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-center" data-i18n="header.contact">
+                            Contact Me
+                        </a>
+                        <a href="https://drive.google.com/file/d/1w8AuHHavLNDBwWJqz5x4HgOvjvEfTpus/view?usp=sharing" class="px-6 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-center" data-i18n="header.resume">
+                            Preview CV
+                        </a>
+                        <a href="https://gpt.aaronw.link/index.html" target="_blank"
+                        class="relative z-0 px-6 py-2 text-blue-600 rounded-md bg-white text-center font-medium
+                                transition duration-300 overflow-hidden border border-transparent
+                                before:absolute before:inset-0 before:rounded-md
+                                before:bg-gradient-to-r before:from-pink-500 before:via-yellow-400 before:to-blue-500
+                                before:z-[-1] before:animate-border-shine before:opacity-100
+                                after:absolute after:inset-[1px] after:rounded-md after:bg-white after:z-[-1]
+                                hover:bg-blue-50 transition duration-300"
+                        data-i18n="header.askGpt">
+                        Ask Aaron's GPT
+                        </a>
+                    </div>
+                    <div class="inline-flex self-start sm:self-end rounded-full border border-gray-200 bg-white p-1 text-sm shadow-sm" aria-label="Language switcher">
+                        <button type="button" data-locale-mode="auto" aria-pressed="true" class="rounded-full px-3 py-1 font-medium transition duration-300 text-gray-600">Auto</button>
+                        <button type="button" data-locale-mode="en" aria-pressed="false" class="rounded-full px-3 py-1 font-medium transition duration-300 text-gray-600">EN</button>
+                        <button type="button" data-locale-mode="zh-CN" aria-pressed="false" class="rounded-full px-3 py-1 font-medium transition duration-300 text-gray-600">中文</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,21 +101,21 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-10 lg:mb-0">
-                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Hello, I'm <span class="text-blue-600">Aaron Wang</span></h2>
-                    <p class="text-lg text-gray-600 mb-6">Software Development Engineer</p>
-                    <p class="text-gray-600 mb-8">👋 Hi, I’m Aaron Wang — a full-stack software engineer passionate about building scalable systems, intelligent tools, and elegant user experiences. Whether it’s backend infrastructure, data pipelines, or intuitive frontend interfaces, I enjoy turning ideas into working solutions.</p>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-i18n-html="hero.greetingHtml">Hello, I'm <span class="text-blue-600">Aaron Wang</span></h2>
+                    <p class="text-lg text-gray-600 mb-6" data-i18n="hero.role">Software Development Engineer</p>
+                    <p class="text-gray-600 mb-8" data-i18n="hero.summary">Hi, I'm Aaron Wang, a full-stack software engineer passionate about building scalable systems, intelligent tools, and elegant user experiences. Whether it's backend infrastructure, data pipelines, or intuitive frontend interfaces, I enjoy turning ideas into working solutions.</p>
                     <div class="flex space-x-4">
-                        <a href="#experience" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+                        <a href="#experience" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300" data-i18n="hero.experience">
                             My Experience
                         </a>
-                        <a href="#projects" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300">
+                        <a href="#projects" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300" data-i18n="hero.projects">
                             View Projects
                         </a>
                     </div>
                 </div>
                 <div class="lg:w-1/2 flex justify-center">
                     <div class="bg-white p-2 rounded-xl shadow-lg inline-flex items-center justify-center border-4 border-blue-200 w-full max-w-xs sm:max-w-sm md:max-w-md">
-                        <img src="asset/me.png" alt="Aaron Wang" class="object-cover rounded-lg w-full" style="height:auto;" />
+                        <img src="asset/me.png" alt="Portrait of Aaron Wang" data-i18n-alt="hero.imageAlt" class="object-cover rounded-lg w-full" style="height:auto;" />
                     </div>
                 </div>
             </div>
@@ -119,7 +125,7 @@
 
     <section id="experience" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Professional Experience</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="section.experience">Professional Experience</h2>
             <div class="max-w-4xl mx-auto">
  
                 <div class="relative pl-12 mb-12 timeline-item">
@@ -128,11 +134,11 @@
                     </div>
                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">Software Development Engineer</h3>
+                            <h3 class="text-xl font-semibold text-gray-800" data-i18n="exp1.title">Software Development Engineer</h3>
                             <span class="text-blue-600 font-medium">Nov 2024 - Present</span>
                         </div>
-                        <h4 class="text-gray-600 font-medium mb-3">Applications Technology Group (ATG Inc) • Duluth, GA</h4>
-                        <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                        <h4 class="text-gray-600 font-medium mb-3" data-i18n="exp1.company">Applications Technology Group (ATG Inc) • Duluth, GA</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-1" data-i18n-html="exp1.bullets">
                             <li>Collaborated in <b>Kubernetes-based</b> deployment workflows, leveraging container orchestration to enhance application reliability and scalability.</li>
                             <li>Automated infrastructure provisioning and application deployment using Terraform and <b>GitHub Actions</b> CI/CD tools.</li>
                             <li>Designed, containerized, and deployed <b>Spring Boot</b> microservices using <b>Docker</b> to ensure consistent and scalable <b>cloud-native</b> backend architecture.</li>
@@ -148,11 +154,11 @@
                     </div>
                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">Software Development Engineer Intern</h3>
+                            <h3 class="text-xl font-semibold text-gray-800" data-i18n="exp2.title">Software Development Engineer Intern</h3>
                             <span class="text-blue-600 font-medium">Aug 2023 - Aug 2024</span>
                         </div>
-                        <h4 class="text-gray-600 font-medium mb-3">HARRiS Group • Atlanta, GA</h4>
-                        <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                        <h4 class="text-gray-600 font-medium mb-3" data-i18n="exp2.company">HARRiS Group • Atlanta, GA</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-1" data-i18n-html="exp2.bullets">
                             <li>Built internal dashboards using <b>Apache Superset</b> to visualize production metrics and support real-time decision-making.</li>
                             <li>Developed a web-based app using <b>Flask</b> and <b>React</b> to automate the slot-die-coating process, cut 28% in production time, improved 26% in quality, and enhanced image data querying and analysis speed by 20%.</li>
                             <li>Designed and deployed a multi-user management system with <b >React</b>, <b>Flask</b>, <b>HTML/CSS</b>, and <b>MySQL,</b> enabling a teamwork setting.</li>
@@ -167,7 +173,7 @@
 
     <section id="projects" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Key Projects</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="section.projects">Key Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
@@ -175,8 +181,8 @@
         <i class="fas fa-user-circle text-indigo-400 text-5xl"></i>
     </div>
             <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Personal Portfolio Website</h3>
-                <p class="text-gray-600 mb-4">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="proj1.title">Personal Portfolio Website</h3>
+                <p class="text-gray-600 mb-4" data-i18n-html="proj1.desc">
                     Built a personal website using <b>React</b> as the frontend framework, deployed on <b>GitHub Pages</b>. 
                     The backend was implemented in <b>Go</b>, responsible for tracking visitor analytics and performing website security checks.
                     Integrated a <b>RAG-based AI assistant</b> powered by <b>ChatGPT API</b>, which answers HR-related questions about my resume.
@@ -191,7 +197,7 @@
                 </div>
                 <div class="flex justify-between items-center">
                     <span class="text-sm text-gray-500">May 2025 – Present</span>
-                    <a href="https://github.com/aaronwork1205/personal-page" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">GitHub Repo 
+                    <a href="https://github.com/aaronwork1205/personal-page" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium"><span data-i18n="project.repo">GitHub Repo</span>
                         <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
                     </a>
                 </div>
@@ -203,8 +209,8 @@
                         <i class="fas fa-heartbeat text-red-400 text-5xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">HealthAI Advisor</h3>
-                        <p class="text-gray-600 mb-4">Developed a user login and registration system using <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, and <b>React</b>. Designed a machine learning model to analyze user health data and identify potential health risks. Implemented a Flask backend for secure user credential storage and integrated ChatGPT for text summarization and healthy lifestyle suggestions.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="proj2.title">HealthAI Advisor</h3>
+                        <p class="text-gray-600 mb-4" data-i18n-html="proj2.desc">Developed a user login and registration system using <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, and <b>React</b>. Designed a machine learning model to analyze user health data and identify potential health risks. Implemented a Flask backend for secure user credential storage and integrated ChatGPT for text summarization and healthy lifestyle suggestions.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Flask</span>
@@ -213,7 +219,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">Jan 2024 – May 2024</span>
-                            <a href="https://github.com/aaronwork1205/medical-informatics" class="text-blue-600 hover:text-blue-800 text-sm font-medium">GitHub Repo
+                            <a href="https://github.com/aaronwork1205/medical-informatics" class="text-blue-600 hover:text-blue-800 text-sm font-medium"><span data-i18n="project.repo">GitHub Repo</span>
                                 <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
                             </a>
                             
@@ -227,8 +233,8 @@
                         <i class="fas fa-tasks text-blue-400 text-5xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Task Manager Mobile App</h3>
-                        <p class="text-gray-600 mb-4">Developed a task manager mobile application including task management, account operations, and map/calendar event views. Designed and developed the frontend User Interface using <b>React Native</b> and <b>Expo Go</b>, ensuring an intuitive user experience. Created a backend system via <b>Express.js</b> and <b>MongoDB</b>, handling incoming API requests and storing user-generated information.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="proj3.title">Task Manager Mobile App</h3>
+                        <p class="text-gray-600 mb-4" data-i18n-html="proj3.desc">Developed a task manager mobile application including task management, account operations, and map/calendar event views. Designed and developed the frontend User Interface using <b>React Native</b> and <b>Expo Go</b>, ensuring an intuitive user experience. Created a backend system via <b>Express.js</b> and <b>MongoDB</b>, handling incoming API requests and storing user-generated information.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React Native</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Express.js</span>
@@ -236,7 +242,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">Aug 2023 – Sep 2023</span>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">GitHub Repo 
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium"><span data-i18n="project.repo">GitHub Repo</span>
                             <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
                                 </a>
                         </div>
@@ -245,7 +251,7 @@
             </div>
             <div class="text-center mt-12">
                 <a href="https://github.com/aaronwork1205" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300">
-                    View All Projects
+                    <span data-i18n="projects.viewAll">View All Projects</span>
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -255,14 +261,14 @@
 
     <section class="py-16 bg-white">
     <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Skills & Expertise</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="section.skills">Skills & Expertise</h2>
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
                         <i class="fas fa-code text-blue-600 mr-3"></i>
-                        Languages & Frameworks
+                        <span data-i18n="skills.languages">Languages & Frameworks</span>
                     </h3>
                     <div class="space-y-5">
                         <div>
@@ -352,7 +358,7 @@
                 <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
                         <i class="fas fa-cloud text-blue-600 mr-3"></i>
-                        Cloud & DevOps
+                        <span data-i18n="skills.cloud">Cloud & DevOps</span>
                     </h3>
                     <div class="space-y-5">
                         <div>
@@ -397,12 +403,12 @@
                 <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
                         <i class="fas fa-users text-blue-600 mr-3"></i>
-                        Professional Skills
+                        <span data-i18n="skills.professional">Professional Skills</span>
                     </h3>
                     <div class="space-y-5">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Leadership</span>
+                                <span class="text-gray-700" data-i18n="skill.leadership">Leadership</span>
                                 <span class="text-gray-500">95%</span>
                             </div>
                             <div class="skill-bar">
@@ -411,7 +417,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Communication</span>
+                                <span class="text-gray-700" data-i18n="skill.communication">Communication</span>
                                 <span class="text-gray-500">90%</span>
                             </div>
                             <div class="skill-bar">
@@ -420,7 +426,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Project Management</span>
+                                <span class="text-gray-700" data-i18n="skill.pm">Project Management</span>
                                 <span class="text-gray-500">85%</span>
                             </div>
                             <div class="skill-bar">
@@ -429,7 +435,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Team Collaboration</span>
+                                <span class="text-gray-700" data-i18n="skill.collaboration">Team Collaboration</span>
                                 <span class="text-gray-500">90%</span>
                             </div>
                             <div class="skill-bar">
@@ -446,19 +452,19 @@
 
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Education & Certifications</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="section.education">Education & Certifications</h2>
             
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         
                 <div class="bg-white p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
                         <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
-                        Education
+                        <span data-i18n="education.title">Education</span>
                     </h3>
                     <div class="space-y-6">
                         <div>
                             <a href="https://www.parchment.com/u/award/79c829be3d908c1d1d287c44a5a5f683">
-                                <h4 class="font-medium text-gray-800">Master in Computer Science
+                                <h4 class="font-medium text-gray-800"><span data-i18n="education.masters">Master in Computer Science</span>
                                 <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
                                 </h4>
                             </a>
@@ -468,7 +474,7 @@
                         </div>
                         <div>
                             <a href="https://www.parchment.com/u/award/0130e770f510631d0c072b147fce6e31">
-                                <h4 class="font-medium text-gray-800">Bachelor in Computer Science
+                                <h4 class="font-medium text-gray-800"><span data-i18n="education.bachelors">Bachelor in Computer Science</span>
                                 <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
                                 </h4>
                             </a>
@@ -482,7 +488,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
                         <i class="fas fa-certificate text-blue-600 mr-3"></i>
-                        Certifications
+                        <span data-i18n="certifications.title">Certifications</span>
                     </h3>
                     <div class="space-y-4">
                         <div>
@@ -513,12 +519,12 @@
 
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="section.contact">Get In Touch</h2>
             
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact Information</h3>
-                    <p class="text-gray-600 mb-6">Feel free to reach out if you're looking for someone with my skills and experience, or just want to connect.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" data-i18n="contact.infoTitle">Contact Information</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="contact.subtitle">Feel free to reach out if you're looking for someone with my skills and experience, or just want to connect.</p>
                     
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -526,7 +532,7 @@
                                 <i class="fas fa-envelope text-blue-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <h4 class="font-medium text-gray-800" data-i18n="contact.email">Email</h4>
                                 <a href="mailto:aaron.wang888@hotmail.com">
                                     <span class="text-blue-600 select-all">
                                         <span>a</span><span>a</span><span>r</span><span>o</span><span>n</span><span>.</span><span>w</span><span>a</span><span>n</span><span>g</span><span>8</span><span>8</span><span>8</span>
@@ -542,8 +548,8 @@
                                 <i class="fas fa-map-marker-alt text-blue-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Location</h4>
-                                <p class="text-gray-600">Atlanta, GA or ANYWHERE on the Earth</p>
+                                <h4 class="font-medium text-gray-800" data-i18n="contact.location">Location</h4>
+                                <p class="text-gray-600" data-i18n="contact.locationValue">Atlanta, GA or anywhere on Earth</p>
                             </div>
                         </div>
                         
@@ -552,14 +558,14 @@
                                 <i class="fas fa-clock text-blue-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Availability</h4>
-                                <p class="text-gray-600">Available for full-time opportunities</p>
+                                <h4 class="font-medium text-gray-800" data-i18n="contact.availability">Availability</h4>
+                                <p class="text-gray-600" data-i18n="contact.availabilityValue">Available for full-time opportunities</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="mt-8">
-                        <h4 class="font-medium text-gray-800 mb-4">Connect with me</h4>
+                        <h4 class="font-medium text-gray-800 mb-4" data-i18n="contact.connect">Connect with me</h4>
                         <div class="flex space-x-4">
                             <a href="https://www.linkedin.com/in/wenhao-wang-aaron/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
                                 <i class="fab fa-linkedin-in"></i>
@@ -577,22 +583,22 @@
                 <div>
                     <form action="https://formspree.io/f/mqabojrd" method="POST" class="bg-gray-50 p-6 rounded-lg shadow-sm">
     <div class="mb-4">
-        <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="name" class="block text-gray-700 font-medium mb-2" data-i18n="form.name">Name</label>
+        <input type="text" id="name" name="name" data-i18n-placeholder="form.placeholder.name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <div class="mb-4">
-        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="email" class="block text-gray-700 font-medium mb-2" data-i18n="form.email">Email</label>
+        <input type="email" id="email" name="email" data-i18n-placeholder="form.placeholder.email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <div class="mb-4">
-        <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-        <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="subject" class="block text-gray-700 font-medium mb-2" data-i18n="form.subject">Subject</label>
+        <input type="text" id="subject" name="subject" data-i18n-placeholder="form.placeholder.subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <div class="mb-4">
-        <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <label for="message" class="block text-gray-700 font-medium mb-2" data-i18n="form.message">Message</label>
+        <textarea id="message" name="message" rows="4" data-i18n-placeholder="form.placeholder.message" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
     </div>
-    <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+    <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-300" data-i18n="form.submit">
         Send Message
     </button>
 </form>
@@ -604,19 +610,20 @@
 
     <footer class="bg-gray-900 text-gray-400 py-8 px-4">
         <div class="max-w-2xl mx-auto text-center space-y-3 rounded-md bg-gray-800 bg-opacity-30 p-6 shadow-sm">
-            <p class="text-sm">
-                We collect anonymized visitor data (IP and browser info) to improve the site. No personal data is shared.
+            <p class="text-sm" data-i18n="footer.notice">
+                This static site does not run visitor analytics. If you switch languages, your preference is stored only in your browser.
             </p>
             <p class="text-sm">
-                By using this site, you agree to our <a href="/privacy.html" target="_blank" rel="noopener noreferrer" class="text-blue-400 font-semibold hover:underline ml-1">Privacy Policy →</a>.
+                <span data-i18n="footer.privacyLead">Read the</span>
+                <a href="/privacy.html" target="_blank" rel="noopener noreferrer" class="text-blue-400 font-semibold hover:underline ml-1" data-i18n="footer.privacyLink">Privacy Policy -></a>
             </p>
         </div>
 
 
   <div class="mt-8 text-center text-gray-500 text-xs">
     <h2 class="font-bold text-white text-lg">Aaron Wang</h2>
-    <p>Software Development Engineer</p>
-    <p>© 2025 Aaron Wang. All rights reserved.</p>
+    <p data-i18n="footer.role">Software Development Engineer</p>
+    <p data-i18n="footer.copyright">© 2025 Aaron Wang. All rights reserved.</p>
   </div>
 </footer>
 

@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy - aaronw.link</title>
+  <title>Privacy Policy | Aaron Wang</title>
+  <script src="i18n.js" defer></script>
   <link rel="icon" href="asset/fav.png" type="image/png" sizes="32x32">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
@@ -46,58 +47,81 @@
     }
   </style>
 </head>
-<body>
-  <h1>Privacy Policy</h1>
+<body data-page="privacy">
+  <div style="display:flex; justify-content:flex-end; margin-bottom:1rem;">
+    <div aria-label="Language switcher" style="display:inline-flex; border:1px solid #d1d5db; background:#ffffff; border-radius:999px; padding:0.2rem; box-shadow:0 1px 2px rgba(15, 23, 42, 0.08);">
+      <button type="button" data-locale-mode="auto" aria-pressed="true" style="border:none; background:transparent; border-radius:999px; padding:0.4rem 0.8rem; cursor:pointer;">Auto</button>
+      <button type="button" data-locale-mode="en" aria-pressed="false" style="border:none; background:transparent; border-radius:999px; padding:0.4rem 0.8rem; cursor:pointer;">EN</button>
+      <button type="button" data-locale-mode="zh-CN" aria-pressed="false" style="border:none; background:transparent; border-radius:999px; padding:0.4rem 0.8rem; cursor:pointer;">中文</button>
+    </div>
+  </div>
+  <h1 data-i18n="privacy.title">Privacy Policy</h1>
 
-  <p>Welcome to <strong>aaronw.link</strong> (the “Site”). We value your privacy and are committed to protecting your personal information. Please read this Privacy Policy carefully to understand how we collect, use, and safeguard your data.</p>
-
-  <h2>1. Information We Collect</h2>
-  <p>When you visit or use the Site, we may automatically collect the following information:</p>
-  <ul>
-    <li>Your IP address (used for geolocation and security purposes)</li>
-    <li>Timestamp of your visit</li>
-    <li>Browser and device information (User-Agent)</li>
-  </ul>
-  <p>This information is collected solely for analytics and improving our services and does not personally identify you.</p>
-
-  <h2>2. How We Use Your Information</h2>
-  <p>We use the collected data to:</p>
-  <ul>
-    <li>Analyze website traffic and usage patterns to enhance user experience</li>
-    <li>Ensure the security and integrity of the Site by preventing malicious activity</li>
-  </ul>
-  <p>We do <strong>not</strong> sell, rent, or share your information with third parties except as required by law.</p>
-
-  <h2>3. Data Storage and Security</h2>
-  <p>
-    Visit data is stored securely in our database and accessed only by authorized personnel.
-  </p>
-  <p>
-    We implement reasonable technical and organizational measures to protect against unauthorized access, disclosure, or destruction of data.
+  <p data-i18n="privacy.intro">
+    This site is a static GitHub Pages portfolio. It does not run server-side visitor analytics. This page explains the limited browser-side data handling used for language preference and the third-party services linked from the site.
   </p>
 
-  <h2>4. Cookies and Tracking Technologies</h2>
-  <p>We do <strong>not</strong> use cookies or other tracking technologies to collect personal information on this Site.</p>
+  <h2 data-i18n="privacy.section1.title">1. Information We Collect</h2>
+  <p data-i18n="privacy.section1.lead">
+    The site itself only stores or transmits the following information in specific cases:
+  </p>
+  <ul data-i18n-html="privacy.section1.list">
+    <li>Your selected language preference, stored in your browser via localStorage</li>
+    <li>Any information you choose to submit through the contact form, which is processed by Formspree</li>
+  </ul>
+  <p data-i18n="privacy.section1.note">
+    The site does not collect your IP address for analytics through its own JavaScript.
+  </p>
 
-  <h2>5. Third-Party Services</h2>
-  <p>We may use third-party services, such as GeoIP databases, to help provide geolocation data. These third parties may collect limited data as described in their own privacy policies.</p>
+  <h2 data-i18n="privacy.section2.title">2. How We Use Your Information</h2>
+  <p data-i18n="privacy.section2.lead">We use the collected data to:</p>
+  <ul data-i18n-html="privacy.section2.list">
+    <li>Remember your language choice between visits on the same browser</li>
+    <li>Deliver contact form submissions to the configured email workflow</li>
+  </ul>
+  <p data-i18n="privacy.section2.note">
+    We do not sell, rent, or share your information with third parties except as required by law.
+  </p>
 
-  <h2>6. Your Rights</h2>
-  <p>You have the right to request deletion or correction of your visit data stored by us. Please contact us at <a href="mailto:-email@example.com">aaronwork1205[at]outlook[dot]com</a> for any such requests.</p>
+  <h2 data-i18n="privacy.section3.title">3. Data Storage and Security</h2>
+  <p data-i18n="privacy.section3.p1">
+    Language preference is stored locally in your own browser storage.
+  </p>
+  <p data-i18n="privacy.section3.p2">
+    If you submit the contact form, the submitted data is handled by Formspree under its own security and retention practices.
+  </p>
 
-  <h2>7. Changes to This Privacy Policy</h2>
-  <p>We may update this Privacy Policy occasionally. Changes will be posted on this page, so please check back regularly.</p>
+  <h2 data-i18n="privacy.section4.title">4. Cookies and Tracking Technologies</h2>
+  <p data-i18n="privacy.section4.p1">
+    We do not use analytics cookies or tracking beacons on this site. localStorage is used only to remember language preference.
+  </p>
 
-  <h2>8. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy, please contact us:</p>
-  <ul>
-    <li>Email: <a href="mailto:your-email@example.com">aaronwork1205[at]outlook[dot].com</a></li>
+  <h2 data-i18n="privacy.section5.title">5. Third-Party Services</h2>
+  <p data-i18n="privacy.section5.p1">
+    The site uses or links to third-party services such as GitHub Pages, Google Fonts, Font Awesome, and Formspree. Those services may receive standard request metadata when your browser loads their resources or when you submit the contact form.
+  </p>
+
+  <h2 data-i18n="privacy.section6.title">6. Your Rights</h2>
+  <p data-i18n-html="privacy.section6.p1">
+    You can clear the saved language preference at any time by clearing this site's browser storage. For questions about contact form submissions, reach out at <a href="mailto:aaronwork1205@outlook.com">aaronwork1205[at]outlook[dot]com</a>.
+  </p>
+
+  <h2 data-i18n="privacy.section7.title">7. Changes to This Privacy Policy</h2>
+  <p data-i18n="privacy.section7.p1">
+    We may update this Privacy Policy occasionally. Changes will be posted on this page, so please check back regularly.
+  </p>
+
+  <h2 data-i18n="privacy.section8.title">8. Contact Us</h2>
+  <p data-i18n="privacy.section8.p1">
+    If you have any questions about this Privacy Policy, please contact us:
+  </p>
+  <ul data-i18n-html="privacy.section8.list">
+    <li>Email: <a href="mailto:aaronwork1205@outlook.com">aaronwork1205[at]outlook[dot]com</a></li>
     <li>Website: <a href="https://aaronw.link" target="_blank" rel="noopener noreferrer">https://aaronw.link</a></li>
   </ul>
 
-  <footer>
-    &copy; 2025 aaronw.link. All rights reserved.
+  <footer data-i18n="privacy.footer">
+    © 2025 aaronw.link. All rights reserved.
   </footer>
 </body>
 </html>
-your
