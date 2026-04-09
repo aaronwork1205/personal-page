@@ -273,6 +273,27 @@ const translations = {
 
 let currentLocale = "en";
 let currentMode = "auto";
+const LOCALE_CYCLE = ["auto", "en", "zh-CN"];
+const LOCALE_SWITCHER_TEXT = {
+  en: {
+    label: "Language",
+    switchTo: "Click to switch to",
+    states: {
+      auto: "Auto",
+      en: "EN",
+      "zh-CN": "中文",
+    },
+  },
+  "zh-CN": {
+    label: "语言",
+    switchTo: "点击切换到",
+    states: {
+      auto: "自动",
+      en: "EN",
+      "zh-CN": "中文",
+    },
+  },
+};
 
 function normalizeLocale(value) {
   if (!value) {
@@ -301,6 +322,41 @@ function getDictionary(locale) {
   const page = getCurrentPage();
   const pageTranslations = translations[page] || translations.home;
   return pageTranslations[locale] || pageTranslations.en;
+}
+
+function getLocaleSwitcherCopy() {
+  return currentLocale === "zh-CN"
+    ? LOCALE_SWITCHER_TEXT["zh-CN"]
+    : LOCALE_SWITCHER_TEXT.en;
+}
+
+function getActiveLocaleMode() {
+  return currentMode === "auto" ? "auto" : currentLocale;
+}
+
+function getNextLocaleMode(mode = getActiveLocaleMode()) {
+  const currentIndex = LOCALE_CYCLE.indexOf(mode);
+  if (currentIndex === -1) {
+    return LOCALE_CYCLE[0];
+  }
+
+  return LOCALE_CYCLE[(currentIndex + 1) % LOCALE_CYCLE.length];
+}
+
+function setLocaleMode(mode) {
+  if (mode === "auto") {
+    localStorage.removeItem(LOCALE_STORAGE_KEYS.manual);
+    applyLocale(getAutomaticLocale(), "auto");
+    return;
+  }
+
+  const locale = normalizeLocale(mode);
+  if (!locale || locale === "auto") {
+    return;
+  }
+
+  localStorage.setItem(LOCALE_STORAGE_KEYS.manual, locale);
+  applyLocale(locale, "manual");
 }
 
 function applyLocale(locale, mode) {
@@ -350,6 +406,32 @@ function applyLocale(locale, mode) {
 }
 
 function updateLocaleSwitcher() {
+  const switcherCopy = getLocaleSwitcherCopy();
+  const activeMode = getActiveLocaleMode();
+  const nextMode = getNextLocaleMode(activeMode);
+
+  document.querySelectorAll("[data-locale-toggle]").forEach((button) => {
+    const activeLabel = switcherCopy.states[activeMode];
+    const nextLabel = switcherCopy.states[nextMode];
+    const labelNode = button.querySelector("[data-locale-toggle-label]");
+
+    if (labelNode) {
+      labelNode.textContent = activeLabel;
+    } else {
+      button.textContent = activeLabel;
+    }
+
+    button.dataset.localeMode = activeMode;
+    button.setAttribute(
+      "aria-label",
+      `${switcherCopy.label}: ${activeLabel}. ${switcherCopy.switchTo} ${nextLabel}.`,
+    );
+    button.setAttribute("title", `${switcherCopy.switchTo} ${nextLabel}`);
+    button.style.borderColor = activeMode === "auto" ? "#cbd5e1" : "#93c5fd";
+    button.style.backgroundColor = activeMode === "auto" ? "#f8fafc" : "#eff6ff";
+    button.style.color = activeMode === "auto" ? "#334155" : "#1d4ed8";
+  });
+
   document.querySelectorAll("[data-locale-mode]").forEach((button) => {
     const mode = button.dataset.localeMode;
     const isActive =
@@ -391,22 +473,15 @@ function getAutomaticLocale() {
 }
 
 function bindLocaleSwitcher() {
+  document.querySelectorAll("[data-locale-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setLocaleMode(getNextLocaleMode());
+    });
+  });
+
   document.querySelectorAll("[data-locale-mode]").forEach((button) => {
     button.addEventListener("click", () => {
-      const mode = button.dataset.localeMode;
-      if (mode === "auto") {
-        localStorage.removeItem(LOCALE_STORAGE_KEYS.manual);
-        applyLocale(getAutomaticLocale(), "auto");
-        return;
-      }
-
-      const locale = normalizeLocale(mode);
-      if (!locale || locale === "auto") {
-        return;
-      }
-
-      localStorage.setItem(LOCALE_STORAGE_KEYS.manual, locale);
-      applyLocale(locale, "manual");
+      setLocaleMode(button.dataset.localeMode);
     });
   });
 }

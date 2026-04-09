@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Aaron Wang</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="i18n.js?v=20260409-2" defer></script>
+    <script src="i18n.js?v=20260409-3" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="icon" href="asset/fav.png" type="image/png" sizes="32x32">
@@ -56,8 +56,8 @@
     
     <header class="bg-white shadow-sm">
         <div class="container mx-auto px-6 py-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="flex items-center mb-6 md:mb-0">
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <div class="flex items-center">
                     <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
                         <i class="fas fa-user text-blue-500 text-2xl"></i>
                     </div>
@@ -66,16 +66,16 @@
                         <p class="text-blue-600" data-i18n="header.role">Software Development Engineer</p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-3 sm:items-end">
-                    <div class="flex flex-col sm:flex-row sm:flex-wrap space-y-2 sm:space-y-0 sm:gap-4">
-                        <a href="#contact" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-center" data-i18n="header.contact">
+                <div class="flex w-full md:w-auto justify-end">
+                    <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-end">
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-center" data-i18n="header.contact">
                             Contact Me
                         </a>
-                        <a href="asset/resume_EN.pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-center" data-i18n="header.resume" data-i18n-href="header.resumeHref">
+                        <a href="asset/resume_EN.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-center" data-i18n="header.resume" data-i18n-href="header.resumeHref">
                             Resume PDF
                         </a>
                         <a href="https://gpt.aaronw.link/index.html" target="_blank"
-                        class="relative z-0 px-6 py-2 text-blue-600 rounded-md bg-white text-center font-medium
+                        class="relative z-0 inline-flex items-center justify-center px-6 py-2 text-blue-600 rounded-md bg-white text-center font-medium
                                 transition duration-300 overflow-hidden border border-transparent
                                 before:absolute before:inset-0 before:rounded-md
                                 before:bg-gradient-to-r before:from-pink-500 before:via-yellow-400 before:to-blue-500
@@ -85,11 +85,10 @@
                         data-i18n="header.askGpt">
                         Ask Aaron's GPT
                         </a>
-                    </div>
-                    <div class="inline-flex self-start sm:self-end rounded-full border border-gray-200 bg-white p-1 text-sm shadow-sm" aria-label="Language switcher">
-                        <button type="button" data-locale-mode="auto" aria-pressed="true" class="rounded-full px-3 py-1 font-medium transition duration-300 text-gray-600">Auto</button>
-                        <button type="button" data-locale-mode="en" aria-pressed="false" class="rounded-full px-3 py-1 font-medium transition duration-300 text-gray-600">EN</button>
-                        <button type="button" data-locale-mode="zh-CN" aria-pressed="false" class="rounded-full px-3 py-1 font-medium transition duration-300 text-gray-600">中文</button>
+                        <button type="button" data-locale-toggle aria-label="Language: Auto" class="inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition duration-300 hover:border-slate-400 hover:bg-slate-100">
+                            <i class="fas fa-globe text-sm text-blue-600" aria-hidden="true"></i>
+                            <span data-locale-toggle-label>Auto</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -220,7 +219,7 @@
 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
     <div class="h-48 overflow-hidden bg-gray-200">
-        <img src="asset/me.png" alt="Personal project cover" class="w-full h-full object-cover" />
+        <img src="asset/meproj.png" alt="Personal project cover" class="w-full h-full object-cover" />
     </div>
             <div class="p-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="proj1.title">Personal Portfolio Website</h3>
