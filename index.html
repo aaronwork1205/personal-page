@@ -62,7 +62,7 @@
                         <i class="fas fa-user text-blue-500 text-2xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-gray-800">Aaron Wang</h1>
+                        <h1 class="text-2xl font-bold text-gray-800" data-i18n="person.name">Aaron Wang</h1>
                         <p class="text-blue-600" data-i18n="header.role">Software Development Engineer</p>
                     </div>
                 </div>
@@ -176,6 +176,29 @@
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="section.projects">Key Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
+                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-emerald-400 text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="proj4.title">Hanbridge Online Education</h3>
+                        <p class="text-gray-600 mb-4" data-i18n-html="proj4.desc">Worked as a full-stack and DevOps engineer for an online education platform using <b>React</b>, <b>TypeScript</b>, <b>FastAPI</b>, <b>PostgreSQL</b>, and <b>AWS</b>. Built 30+ frontend pages and 180+ REST APIs, designed database models and migrations, implemented <b>JWT + RBAC</b>, delivered S3/Lambda/MediaConvert/CloudFront-based file and video pipelines, and used <b>Terraform</b>, <b>GitHub Actions</b>, <b>Docker</b>, and <b>Nginx</b> to automate infrastructure, CI/CD, and production deployment.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">FastAPI</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">AWS</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Terraform</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Nov 2025 – Feb 2026</span>
+                            <a href="https://learn.hanbridge.university/login" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-sm font-medium"><span data-i18n="project.liveSite">Live Site</span>
+                                <i class="fas fa-external-link-alt text-gray-400 text-xs opacity-70 group-hover:text-blue-600 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="bg-white rounded-lg shadow-md overflow-hidden project-card transition duration-300">
     <div class="h-48 bg-gray-200 flex items-center justify-center">
         <i class="fas fa-user-circle text-indigo-400 text-5xl"></i>
@@ -636,7 +659,7 @@
 
 
   <div class="mt-8 text-center text-gray-500 text-xs">
-    <h2 class="font-bold text-white text-lg">Aaron Wang</h2>
+    <h2 class="font-bold text-white text-lg" data-i18n="person.name">Aaron Wang</h2>
     <p data-i18n="footer.role">Software Development Engineer</p>
     <p data-i18n="footer.copyright">© 2025 Aaron Wang. All rights reserved.</p>
   </div>

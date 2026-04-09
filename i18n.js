@@ -6,6 +6,7 @@ const translations = {
   home: {
     en: {
       pageTitle: "About Me | Aaron Wang",
+      "person.name": "Aaron Wang",
       "header.role": "Software Development Engineer",
       "header.contact": "Contact Me",
       "header.resume": "Resume PDF",
@@ -22,21 +23,25 @@ const translations = {
       "exp1.title": "Software Development Engineer",
       "exp1.company": "Applications Technology Group (ATG Inc) • Duluth, GA",
       "exp1.bullets":
-        "<li>Collaborated in <b>Kubernetes-based</b> deployment workflows, leveraging container orchestration to enhance application reliability and scalability.</li><li>Automated infrastructure provisioning and application deployment using Terraform and <b>GitHub Actions</b> CI/CD tools.</li><li>Designed, containerized, and deployed <b>Spring Boot</b> microservices using <b>Docker</b> to ensure consistent and scalable <b>cloud-native</b> backend architecture.</li><li>Implemented RESTful APIs with <b>Spring Boot</b>, supporting seamless integration with the <b>frontend</b> and <b>distributed systems</b>.</li><li>Integrated Spring Security for robust user authentication and role-based access control in cloud environments.</li>",
+        "<li>Collaborated in <b>Kubernetes-based</b> deployment workflows, leveraging container orchestration to improve application reliability and scalability.</li><li>Automated infrastructure provisioning and application deployment using <b>Terraform</b>, <b>Jenkins</b>, and <b>GitHub Actions</b>.</li><li>Designed, containerized, and deployed <b>Spring Boot</b> microservices using <b>Docker</b> to build a consistent and scalable cloud-native backend architecture.</li><li>Implemented RESTful APIs with <b>Spring Boot</b> to support seamless integration with frontend applications and distributed systems.</li><li>Integrated Spring Security to provide robust authentication and role-based access control.</li>",
       "exp2.title": "Software Development Engineer Intern",
       "exp2.company": "HARRiS Group • Atlanta, GA",
       "exp2.bullets":
-        "<li>Built internal dashboards using <b>Apache Superset</b> to visualize production metrics and support real-time decision-making.</li><li>Developed a web-based app using <b>Flask</b> and <b>React</b> to automate the slot-die-coating process, cut 28% in production time, improved 26% in quality, and enhanced image data querying and analysis speed by 20%.</li><li>Designed and deployed a multi-user management system with <b>React</b>, <b>Flask</b>, <b>HTML/CSS</b>, and <b>MySQL</b>, enabling a teamwork setting.</li><li>Automated the processes of image data collection, standardization, pre-processing, and defect labeling using <b>Python</b>.</li><li>Improved defect detection accuracy by 8% and decreased processing time by 83% through the implementation of machine learning models with <b>NumPy</b> and <b>PyTorch</b>.</li>",
+        "<li>Built internal dashboards using <b>Apache Superset</b> to visualize production metrics and support real-time decision-making.</li><li>Developed a web-based app using <b>Flask</b> and <b>React</b> to automate the slot-die-coating process, reducing production time by 28%, improving quality by 26%, and increasing image-query speed by 20%.</li><li>Designed and deployed a multi-user management system with <b>React</b>, <b>Flask</b>, <b>HTML/CSS</b>, and <b>MySQL</b> to support collaborative workflows.</li><li>Automated image data collection, standardization, preprocessing, and defect labeling pipelines using <b>Python</b>.</li><li>Integrated <b>ROS</b> middleware for robot control and data communication, improving software-hardware coordination on the production line.</li>",
       "section.projects": "Key Projects",
+      "proj4.title": "Hanbridge Online Education",
+      "proj4.desc":
+        "Worked as a full-stack and DevOps engineer for an online education platform using <b>React</b>, <b>TypeScript</b>, <b>FastAPI</b>, <b>PostgreSQL</b>, and <b>AWS</b>. Built 30+ frontend pages and 180+ REST APIs, designed database models and migrations, implemented <b>JWT + RBAC</b>, delivered S3/Lambda/MediaConvert/CloudFront-based file and video pipelines, and used <b>Terraform</b>, <b>GitHub Actions</b>, <b>Docker</b>, and <b>Nginx</b> to automate infrastructure, CI/CD, and production deployment.",
       "proj1.title": "Personal Portfolio Website",
       "proj1.desc":
-        "Built a personal website using <b>React</b> as the frontend framework, deployed on <b>GitHub Pages</b>. The backend was implemented in <b>Go</b>, responsible for tracking visitor analytics and performing website security checks. Integrated a <b>RAG-based AI assistant</b> powered by <b>ChatGPT API</b>, which answers HR-related questions about my resume. The project demonstrates full-stack capabilities including AI integration, traffic analysis, and secure deployment.",
+        "Developed a personal portfolio website with a <b>React</b> frontend deployed on <b>GitHub Pages</b>. Implemented a <b>Go</b> backend for visitor analytics and real-time website security checks, integrated a <b>RAG-based</b> AI assistant powered by the <b>ChatGPT API</b> for resume-related HR questions, and automated testing, build, and deployment flows with <b>GitHub Actions</b>.",
       "proj2.title": "HealthAI Advisor",
       "proj2.desc":
-        "Developed a user login and registration system using <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, and <b>React</b>. Designed a machine learning model to analyze user health data and identify potential health risks. Implemented a Flask backend for secure user credential storage and integrated ChatGPT for text summarization and healthy lifestyle suggestions.",
+        "Designed and implemented a full-stack health-advisory platform with a <b>React</b> frontend and a secure <b>Flask</b> backend. Built a <b>scikit-learn</b>-based supervised learning workflow to analyze health indicators and identify potential risks, and delivered reliable frontend-backend communication through <b>RESTful APIs</b> with input validation and error handling.",
       "proj3.title": "Task Manager Mobile App",
       "proj3.desc":
-        "Developed a task manager mobile application including task management, account operations, and map/calendar event views. Designed and developed the frontend User Interface using <b>React Native</b> and <b>Expo Go</b>, ensuring an intuitive user experience. Created a backend system via <b>Express.js</b> and <b>MongoDB</b>, handling incoming API requests and storing user-generated information.",
+        "Developed a task-management mobile application supporting task CRUD, account operations, and map/calendar event views. Built the cross-platform mobile UI with <b>React Native</b> and <b>Expo Go</b>, and implemented a scalable backend with <b>Express.js</b> and <b>MongoDB</b> to process APIs and persist user data.",
+      "project.liveSite": "Live Site",
       "project.repo": "GitHub Repo",
       "projects.viewAll": "View All Projects",
       "section.skills": "Skills & Expertise",
@@ -82,38 +87,43 @@ const translations = {
       "hero.imageAlt": "Portrait of Aaron Wang",
     },
     "zh-CN": {
-      pageTitle: "关于我 | Aaron Wang",
+      pageTitle: "关于我 | 王玟昊",
+      "person.name": "王玟昊",
       "header.role": "软件开发工程师",
       "header.contact": "联系我",
       "header.resume": "简历 PDF",
       "header.resumeHref": "asset/resume_CN.pdf",
-      "header.askGpt": "和 Aaron 的 GPT 聊聊",
+      "header.askGpt": "和王玟昊的 GPT 聊聊",
       "hero.greetingHtml":
-        "你好，我是 <span class=\"text-blue-600\">Aaron Wang</span>",
+        "你好，我是 <span class=\"text-blue-600\">王玟昊</span>",
       "hero.role": "软件开发工程师",
       "hero.summary":
-        "你好，我是 Aaron Wang，一名热衷于构建可扩展系统、智能工具和优秀用户体验的全栈软件工程师。无论是后端基础设施、数据流水线，还是直观的前端界面，我都喜欢把想法真正落地成可运行的产品。",
+        "你好，我是王玟昊，一名热衷于构建可扩展系统、智能工具和优秀用户体验的全栈软件工程师。无论是后端基础设施、数据流水线，还是直观的前端界面，我都喜欢把想法真正落地成可运行的产品。",
       "hero.experience": "工作经历",
       "hero.projects": "查看项目",
       "section.experience": "工作经历",
       "exp1.title": "软件开发工程师",
-      "exp1.company": "Applications Technology Group (ATG Inc) • Duluth, GA",
+      "exp1.company": "Applications Technology Group (ATG Inc)｜美国佐治亚州 Duluth",
       "exp1.bullets":
-        "<li>参与基于 <b>Kubernetes</b> 的部署流程，利用容器编排提升应用的可靠性与可扩展性。</li><li>使用 Terraform 与 <b>GitHub Actions</b> 自动化基础设施创建和应用部署流程。</li><li>使用 <b>Docker</b> 设计、容器化并部署 <b>Spring Boot</b> 微服务，构建一致且可扩展的 <b>cloud-native</b> 后端架构。</li><li>基于 <b>Spring Boot</b> 实现 RESTful API，支持与前端及分布式系统的顺畅集成。</li><li>集成 Spring Security，在云环境中实现稳健的用户认证与基于角色的访问控制。</li>",
-      "exp2.title": "软件开发工程师实习生",
-      "exp2.company": "HARRiS Group • Atlanta, GA",
+        "<li>参与基于 <b>Kubernetes</b> 的部署流程，利用容器编排提升应用可靠性与可扩展性。</li><li>使用 <b>Terraform</b>、<b>Jenkins</b> 和 <b>GitHub Actions</b> 实现基础设施自动化配置与应用部署。</li><li>使用 <b>Docker</b> 设计、容器化并部署 <b>Spring Boot</b> 微服务，构建一致且可扩展的云原生后端架构。</li><li>基于 <b>Spring Boot</b> 实现 RESTful API，支持前端与分布式系统的无缝集成。</li><li>集成 Spring Security，实现稳健的用户认证与基于角色的访问控制。</li>",
+      "exp2.title": "软件开发工程实习生",
+      "exp2.company": "HARRiS Group｜美国佐治亚州亚特兰大",
       "exp2.bullets":
-        "<li>使用 <b>Apache Superset</b> 搭建内部仪表盘，用于可视化生产指标并支持实时决策。</li><li>基于 <b>Flask</b> 与 <b>React</b> 开发 Web 应用，自动化 slot-die-coating 工艺，使生产时间降低 28%，质量提升 26%，图像数据查询和分析速度提升 20%。</li><li>使用 <b>React</b>、<b>Flask</b>、<b>HTML/CSS</b> 与 <b>MySQL</b> 设计并部署多用户管理系统，支持团队协作场景。</li><li>使用 <b>Python</b> 自动化图像数据采集、标准化、预处理和缺陷标注流程。</li><li>通过引入基于 <b>NumPy</b> 与 <b>PyTorch</b> 的机器学习模型，将缺陷检测准确率提升 8%，处理时间缩短 83%。</li>",
+        "<li>使用 <b>Apache Superset</b> 搭建内部数据看板，可视化生产指标并支持实时决策。</li><li>基于 <b>Flask</b> 和 <b>React</b> 开发网页应用，自动化 slot-die-coating 工艺流程，使生产时间缩短 28%，质量提升 26%，图像数据查询与分析速度提升 20%。</li><li>使用 <b>React</b>、<b>Flask</b>、<b>HTML/CSS</b> 和 <b>MySQL</b> 设计并部署用户管理系统，支持团队协作场景。</li><li>使用 <b>Python</b> 自动化完成图像数据采集、标准化、预处理及缺陷标注流程。</li><li>集成 <b>ROS</b> 中间件，实现机器人控制与数据通信，提升产线软硬件协同能力。</li>",
       "section.projects": "重点项目",
+      "proj4.title": "汉桥在线教育",
+      "proj4.desc":
+        "作为在线教育平台的全栈与 DevOps 工程师，基于 <b>React</b>、<b>TypeScript</b>、<b>FastAPI</b>、<b>PostgreSQL</b> 和 <b>AWS</b> 完成从前端到云基础设施的整链路开发。项目覆盖 30+ 前端页面、180+ REST API、31 个核心数据实体与 14 次 schema migration，落地了 <b>JWT + RBAC</b> 权限体系、S3/Lambda/MediaConvert/CloudFront 文件与视频链路，以及基于 <b>Terraform</b>、<b>GitHub Actions</b>、<b>Docker</b> 和 <b>Nginx</b> 的基础设施编排、CI/CD 与线上部署。",
       "proj1.title": "个人作品集网站",
       "proj1.desc":
-        "使用 <b>React</b> 构建个人网站前端，并部署在 <b>GitHub Pages</b>。后端使用 <b>Go</b> 实现，负责访客分析与网站安全检查。集成了基于 <b>ChatGPT API</b> 的 <b>RAG</b> 智能助手，用于回答与我简历相关的 HR 问题。这个项目展示了我在 AI 集成、流量分析与安全部署方面的全栈能力。",
+        "开发个人作品集网站，前端基于 <b>React</b> 并通过 <b>GitHub Pages</b> 部署。实现 <b>Go</b> 后端，用于访客分析与网站实时安全检查；集成基于 <b>RAG</b> 的 AI 助手，结合 <b>ChatGPT API</b> 回答与本人简历相关的 HR 问题；并使用 <b>GitHub Actions</b> 自动化前后端测试、构建与部署流程。",
       "proj2.title": "HealthAI Advisor",
       "proj2.desc":
-        "使用 <b>HTML</b>、<b>CSS</b>、<b>JavaScript</b> 与 <b>React</b> 开发用户注册和登录系统。设计机器学习模型以分析用户健康数据并识别潜在风险。后端使用 Flask 安全存储用户凭据，并集成 ChatGPT 完成文本总结和健康生活建议。",
+        "设计并实现全栈健康建议平台，包含基于 <b>React</b> 的前端和安全的 <b>Flask</b> 后端。基于 <b>scikit-learn</b> 构建监督学习流程，对用户健康指标进行处理并识别潜在风险；同时设计并部署 <b>RESTful API</b>，通过输入校验与错误处理增强系统可靠性与安全性。",
       "proj3.title": "任务管理移动应用",
       "proj3.desc":
-        "开发了一款任务管理移动应用，覆盖任务管理、账号操作以及地图/日历事件视图。前端使用 <b>React Native</b> 与 <b>Expo Go</b> 构建，保证直观的用户体验。后端基于 <b>Express.js</b> 与 <b>MongoDB</b>，负责处理 API 请求和存储用户数据。",
+        "开发任务管理移动应用，支持任务增删改查、用户账户操作以及地图/日历事件视图。使用 <b>React Native</b> 和 <b>Expo Go</b> 设计并实现直观的跨平台移动端界面；后端基于 <b>Express.js</b> 与 <b>MongoDB</b>，负责处理 API 请求并持久化用户数据。",
+      "project.liveSite": "项目链接",
       "project.repo": "GitHub 仓库",
       "projects.viewAll": "查看全部项目",
       "section.skills": "技能与专长",
@@ -155,8 +165,8 @@ const translations = {
       "footer.privacyLead": "查看",
       "footer.privacyLink": "隐私政策 ->",
       "footer.role": "软件开发工程师",
-      "footer.copyright": "© 2025 Aaron Wang。保留所有权利。",
-      "hero.imageAlt": "Aaron Wang 的头像",
+      "footer.copyright": "© 2025 王玟昊。保留所有权利。",
+      "hero.imageAlt": "王玟昊的头像",
     },
   },
   privacy: {
@@ -203,7 +213,7 @@ const translations = {
       "privacy.footer": "© 2025 aaronw.link. All rights reserved.",
     },
     "zh-CN": {
-      pageTitle: "隐私政策 | Aaron Wang",
+      pageTitle: "隐私政策 | 王玟昊",
       "privacy.title": "隐私政策",
       "privacy.intro":
         "本网站是部署在 GitHub Pages 上的静态个人主页，不运行服务端访客统计。本页说明网站在语言偏好和第三方服务方面涉及的少量数据处理。",
