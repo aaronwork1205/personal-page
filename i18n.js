@@ -421,7 +421,7 @@ function updateLocaleSwitcher() {
 
     button.querySelectorAll("[data-locale-option]").forEach((option) => {
       const isActive = option.dataset.localeOption === activeMode;
-      option.style.color = isActive ? "#ffffff" : "#4f6b95";
+      option.style.color = isActive ? "#ffffff" : "#0071e3";
     });
   });
 
