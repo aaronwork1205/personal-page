@@ -325,6 +325,11 @@ function applyLocale(locale, mode) {
   updateLocaleSwitcher();
 }
 
+function openResumeForCurrentLocale() {
+  const resumeUrl = resumeLinks[currentLocale] || resumeLinks.en;
+  window.open(resumeUrl, "_blank", "noopener,noreferrer");
+}
+
 function updateLocaleSwitcher() {
   document.querySelectorAll("[data-locale-mode]").forEach((button) => {
     const mode = button.dataset.localeMode;
@@ -387,8 +392,18 @@ function bindLocaleSwitcher() {
   });
 }
 
+function bindResumeLinks() {
+  document.querySelectorAll("[data-resume-link]").forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      openResumeForCurrentLocale();
+    });
+  });
+}
+
 function initLocale() {
   bindLocaleSwitcher();
+  bindResumeLinks();
 
   const queryPreference = getQueryLocalePreference();
   const manualLocale = normalizeLocale(
