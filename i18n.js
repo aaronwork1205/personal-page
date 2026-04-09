@@ -273,13 +273,11 @@ const translations = {
 
 let currentLocale = "en";
 let currentMode = "auto";
-const LOCALE_CYCLE = ["auto", "en", "zh-CN"];
 const LOCALE_SWITCHER_TEXT = {
   en: {
     label: "Language",
     switchTo: "Click to switch to",
     states: {
-      auto: "Auto",
       en: "EN",
       "zh-CN": "中文",
     },
@@ -288,7 +286,6 @@ const LOCALE_SWITCHER_TEXT = {
     label: "语言",
     switchTo: "点击切换到",
     states: {
-      auto: "自动",
       en: "EN",
       "zh-CN": "中文",
     },
@@ -330,17 +327,12 @@ function getLocaleSwitcherCopy() {
     : LOCALE_SWITCHER_TEXT.en;
 }
 
-function getActiveLocaleMode() {
-  return currentMode === "auto" ? "auto" : currentLocale;
+function getVisibleLocale() {
+  return currentLocale === "zh-CN" ? "zh-CN" : "en";
 }
 
-function getNextLocaleMode(mode = getActiveLocaleMode()) {
-  const currentIndex = LOCALE_CYCLE.indexOf(mode);
-  if (currentIndex === -1) {
-    return LOCALE_CYCLE[0];
-  }
-
-  return LOCALE_CYCLE[(currentIndex + 1) % LOCALE_CYCLE.length];
+function getNextLocaleMode(mode = getVisibleLocale()) {
+  return mode === "zh-CN" ? "en" : "zh-CN";
 }
 
 function setLocaleMode(mode) {
@@ -407,19 +399,13 @@ function applyLocale(locale, mode) {
 
 function updateLocaleSwitcher() {
   const switcherCopy = getLocaleSwitcherCopy();
-  const activeMode = getActiveLocaleMode();
+  const activeMode = getVisibleLocale();
   const nextMode = getNextLocaleMode(activeMode);
 
   document.querySelectorAll("[data-locale-toggle]").forEach((button) => {
     const activeLabel = switcherCopy.states[activeMode];
     const nextLabel = switcherCopy.states[nextMode];
-    const labelNode = button.querySelector("[data-locale-toggle-label]");
-
-    if (labelNode) {
-      labelNode.textContent = activeLabel;
-    } else {
-      button.textContent = activeLabel;
-    }
+    const thumb = button.querySelector("[data-locale-toggle-thumb]");
 
     button.dataset.localeMode = activeMode;
     button.setAttribute(
@@ -427,9 +413,16 @@ function updateLocaleSwitcher() {
       `${switcherCopy.label}: ${activeLabel}. ${switcherCopy.switchTo} ${nextLabel}.`,
     );
     button.setAttribute("title", `${switcherCopy.switchTo} ${nextLabel}`);
-    button.style.borderColor = activeMode === "auto" ? "#cbd5e1" : "#93c5fd";
-    button.style.backgroundColor = activeMode === "auto" ? "#f8fafc" : "#eff6ff";
-    button.style.color = activeMode === "auto" ? "#334155" : "#1d4ed8";
+
+    if (thumb) {
+      thumb.style.transform =
+        activeMode === "zh-CN" ? "translateX(60px)" : "translateX(0)";
+    }
+
+    button.querySelectorAll("[data-locale-option]").forEach((option) => {
+      const isActive = option.dataset.localeOption === activeMode;
+      option.style.color = isActive ? "#0f172a" : "#64748b";
+    });
   });
 
   document.querySelectorAll("[data-locale-mode]").forEach((button) => {
@@ -475,7 +468,7 @@ function getAutomaticLocale() {
 function bindLocaleSwitcher() {
   document.querySelectorAll("[data-locale-toggle]").forEach((button) => {
     button.addEventListener("click", () => {
-      setLocaleMode(getNextLocaleMode());
+      setLocaleMode(getNextLocaleMode(getVisibleLocale()));
     });
   });
 
