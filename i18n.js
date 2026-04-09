@@ -2,14 +2,18 @@ const LOCALE_STORAGE_KEYS = {
   manual: "personal-page.locale.manual",
 };
 
+const resumeLinks = {
+  en: "asset/resume_EN.pdf",
+  "zh-CN": "asset/resume_CN.pdf",
+};
+
 const translations = {
   home: {
     en: {
       pageTitle: "About Me | Aaron Wang",
       "header.role": "Software Development Engineer",
       "header.contact": "Contact Me",
-      "header.resumeEn": "Resume PDF",
-      "header.resumeZh": "Chinese Resume PDF",
+      "header.resume": "Resume PDF",
       "header.askGpt": "Ask Aaron's GPT",
       "hero.greetingHtml":
         "Hello, I'm <span class=\"text-blue-600\">Aaron Wang</span>",
@@ -85,8 +89,7 @@ const translations = {
       pageTitle: "关于我 | Aaron Wang",
       "header.role": "软件开发工程师",
       "header.contact": "联系我",
-      "header.resumeEn": "英文简历 PDF",
-      "header.resumeZh": "中文简历 PDF",
+      "header.resume": "简历 PDF",
       "header.askGpt": "和 Aaron 的 GPT 聊聊",
       "hero.greetingHtml":
         "你好，我是 <span class=\"text-blue-600\">Aaron Wang</span>",
@@ -313,6 +316,10 @@ function applyLocale(locale, mode) {
     if (dictionary[key]) {
       element.setAttribute("alt", dictionary[key]);
     }
+  });
+
+  document.querySelectorAll("[data-resume-link]").forEach((element) => {
+    element.setAttribute("href", resumeLinks[locale] || resumeLinks.en);
   });
 
   updateLocaleSwitcher();
