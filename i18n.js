@@ -21,14 +21,17 @@ const translations = {
       "hero.projects": "View Projects",
       "section.experience": "Professional Experience",
       "exp1.title": "Software Development Engineer",
+      "exp1.period": "Nov 2024 - Present",
       "exp1.company": "Applications Technology Group (ATG Inc) • Duluth, GA",
       "exp1.bullets":
         "<li>Collaborated in <b>Kubernetes-based</b> deployment workflows, leveraging container orchestration to improve application reliability and scalability.</li><li>Automated infrastructure provisioning and application deployment using <b>Terraform</b>, <b>Jenkins</b>, and <b>GitHub Actions</b>.</li><li>Designed, containerized, and deployed <b>Spring Boot</b> microservices using <b>Docker</b> to build a consistent and scalable cloud-native backend architecture.</li><li>Implemented RESTful APIs with <b>Spring Boot</b> to support seamless integration with frontend applications and distributed systems.</li><li>Integrated Spring Security to provide robust authentication and role-based access control.</li>",
       "exp2.title": "Software Development Engineer Intern",
+      "exp2.period": "Aug 2023 - Aug 2024",
       "exp2.company": "HARRiS Group • Atlanta, GA",
       "exp2.bullets":
         "<li>Built internal dashboards using <b>Apache Superset</b> to visualize production metrics and support real-time decision-making.</li><li>Developed a web-based app using <b>Flask</b> and <b>React</b> to automate the slot-die-coating process, reducing production time by 28%, improving quality by 26%, and increasing image-query speed by 20%.</li><li>Designed and deployed a multi-user management system with <b>React</b>, <b>Flask</b>, <b>HTML/CSS</b>, and <b>MySQL</b> to support collaborative workflows.</li><li>Automated image data collection, standardization, preprocessing, and defect labeling pipelines using <b>Python</b>.</li><li>Integrated <b>ROS</b> middleware for robot control and data communication, improving software-hardware coordination on the production line.</li>",
       "exp3.title": "Full-Stack / DevOps Engineer",
+      "exp3.period": "Nov 2025 - Feb 2026",
       "exp3.company": "Hanbridge Online Learning • Remote",
       "exp3.bullets":
         "<li>Built core frontend pages and backend APIs for the online learning platform.</li><li>Designed PostgreSQL schemas and implemented <b>JWT + RBAC</b> access control.</li><li>Delivered AWS-based file and video pipelines for upload, processing, and distribution.</li><li>Automated infrastructure and deployment with <b>Terraform</b>, <b>Docker</b>, <b>Nginx</b>, and <b>GitHub Actions</b>.</li>",
@@ -107,14 +110,17 @@ const translations = {
       "hero.projects": "查看项目",
       "section.experience": "工作经历",
       "exp1.title": "软件开发工程师",
+      "exp1.period": "2024 年 11 月 - 至今",
       "exp1.company": "Applications Technology Group (ATG Inc)｜美国佐治亚州 Duluth",
       "exp1.bullets":
         "<li>参与基于 <b>Kubernetes</b> 的部署流程，利用容器编排提升应用可靠性与可扩展性。</li><li>使用 <b>Terraform</b>、<b>Jenkins</b> 和 <b>GitHub Actions</b> 实现基础设施自动化配置与应用部署。</li><li>使用 <b>Docker</b> 设计、容器化并部署 <b>Spring Boot</b> 微服务，构建一致且可扩展的云原生后端架构。</li><li>基于 <b>Spring Boot</b> 实现 RESTful API，支持前端与分布式系统的无缝集成。</li><li>集成 Spring Security，实现稳健的用户认证与基于角色的访问控制。</li>",
       "exp2.title": "软件开发工程实习生",
+      "exp2.period": "2023 年 8 月 - 2024 年 8 月",
       "exp2.company": "HARRiS Group｜美国佐治亚州亚特兰大",
       "exp2.bullets":
         "<li>使用 <b>Apache Superset</b> 搭建内部数据看板，可视化生产指标并支持实时决策。</li><li>基于 <b>Flask</b> 和 <b>React</b> 开发网页应用，自动化 slot-die-coating 工艺流程，使生产时间缩短 28%，质量提升 26%，图像数据查询与分析速度提升 20%。</li><li>使用 <b>React</b>、<b>Flask</b>、<b>HTML/CSS</b> 和 <b>MySQL</b> 设计并部署用户管理系统，支持团队协作场景。</li><li>使用 <b>Python</b> 自动化完成图像数据采集、标准化、预处理及缺陷标注流程。</li><li>集成 <b>ROS</b> 中间件，实现机器人控制与数据通信，提升产线软硬件协同能力。</li>",
       "exp3.title": "全栈 / DevOps 工程师",
+      "exp3.period": "2025 年 11 月 - 2026 年 2 月",
       "exp3.company": "汉桥在线学习｜远程",
       "exp3.bullets":
         "<li>负责在线学习平台的前后端开发，完成核心页面和后端 API 交付。</li><li>设计 <b>PostgreSQL</b> 数据模型与迁移，落地 <b>JWT + RBAC</b> 权限体系。</li><li>搭建基于 <b>AWS</b> 的文件与视频处理链路，覆盖上传、转码和分发。</li><li>使用 <b>Terraform</b>、<b>Docker</b>、<b>Nginx</b> 和 <b>GitHub Actions</b> 完成基础设施与部署自动化。</li>",
