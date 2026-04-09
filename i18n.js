@@ -2,11 +2,6 @@ const LOCALE_STORAGE_KEYS = {
   manual: "personal-page.locale.manual",
 };
 
-const resumeLinks = {
-  en: "asset/resume_EN.pdf",
-  "zh-CN": "asset/resume_CN.pdf",
-};
-
 const translations = {
   home: {
     en: {
@@ -14,6 +9,7 @@ const translations = {
       "header.role": "Software Development Engineer",
       "header.contact": "Contact Me",
       "header.resume": "Resume PDF",
+      "header.resumeHref": "asset/resume_EN.pdf",
       "header.askGpt": "Ask Aaron's GPT",
       "hero.greetingHtml":
         "Hello, I'm <span class=\"text-blue-600\">Aaron Wang</span>",
@@ -90,6 +86,7 @@ const translations = {
       "header.role": "软件开发工程师",
       "header.contact": "联系我",
       "header.resume": "简历 PDF",
+      "header.resumeHref": "asset/resume_CN.pdf",
       "header.askGpt": "和 Aaron 的 GPT 聊聊",
       "hero.greetingHtml":
         "你好，我是 <span class=\"text-blue-600\">Aaron Wang</span>",
@@ -318,16 +315,14 @@ function applyLocale(locale, mode) {
     }
   });
 
-  document.querySelectorAll("[data-resume-link]").forEach((element) => {
-    element.setAttribute("href", resumeLinks[locale] || resumeLinks.en);
+  document.querySelectorAll("[data-i18n-href]").forEach((element) => {
+    const key = element.dataset.i18nHref;
+    if (dictionary[key]) {
+      element.setAttribute("href", dictionary[key]);
+    }
   });
 
   updateLocaleSwitcher();
-}
-
-function openResumeForCurrentLocale() {
-  const resumeUrl = resumeLinks[currentLocale] || resumeLinks.en;
-  window.open(resumeUrl, "_blank", "noopener,noreferrer");
 }
 
 function updateLocaleSwitcher() {
@@ -392,18 +387,8 @@ function bindLocaleSwitcher() {
   });
 }
 
-function bindResumeLinks() {
-  document.querySelectorAll("[data-resume-link]").forEach((element) => {
-    element.addEventListener("click", (event) => {
-      event.preventDefault();
-      openResumeForCurrentLocale();
-    });
-  });
-}
-
 function initLocale() {
   bindLocaleSwitcher();
-  bindResumeLinks();
 
   const queryPreference = getQueryLocalePreference();
   const manualLocale = normalizeLocale(
